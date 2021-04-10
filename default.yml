@@ -1,0 +1,136 @@
+AllCops:
+  Include:
+    - '**/*.rb'
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/**
+    - config/**
+    - script/**
+  TargetRubyVersion: 2.7.3
+  NewCops: enable
+
+StringLiterals:
+  Enabled: false
+
+LambdaCall:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/factories/**'
+  ExcludedMethods:
+    - ActiveRecord::Base.transaction
+    - attributes_table
+    - attributes_table_for
+    - column
+    - columns
+    - context
+    - controller
+    - define
+    - describe
+    - feature
+    - form
+    - handle
+    - included
+    - inputs
+    - panel
+    - register
+    - scenario
+    - shared_examples
+    - shared_examples_for
+    - show
+    - Struct.new
+    - table_for
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/PredicateName:
+  ForbiddenPrefixes:
+    - is_
+
+Style/AccessorGrouping:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+# We don't consider .positive? etc to be that readable
+Style/NumericPredicate:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/BlockEndNewline:
+  Enabled: false
+
+Layout/CaseIndentation:
+  IndentOneStep: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/MultilineBlockLayout:
+  Exclude:
+    - 'spec/**/*'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  IndentationWidth: 2
+
+Layout/LineLength:
+  Max: 100
+
+# Disabled so that we can write .to_not change { } in Rspec
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/StringConcatenation:
+  Enabled: false
+
+Lint/UselessAccessModifier:
+  MethodCreatingMethods:
+    - delegate
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
