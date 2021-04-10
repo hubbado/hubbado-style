@@ -10,18 +10,12 @@ AllCops:
   TargetRubyVersion: 2.7.3
   NewCops: enable
 
-StringLiterals:
-  Enabled: false
-
-LambdaCall:
-  Enabled: false
-
 Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
     - '**/*.rake'
     - 'spec/factories/**'
-  ExcludedMethods:
+  IgnoredMethods:
     - ActiveRecord::Base.transaction
     - attributes_table
     - attributes_table_for
@@ -72,11 +66,17 @@ Style/FrozenStringLiteralComment:
 Style/Lambda:
   Enabled: false
 
+Style/LambdaCall:
+  Enabled: false
+
 Style/NestedParenthesizedCalls:
   Enabled: false
 
 # We don't consider .positive? etc to be that readable
 Style/NumericPredicate:
+  Enabled: false
+
+Style/StringLiterals:
   Enabled: false
 
 Layout/ArgumentAlignment:
@@ -107,9 +107,6 @@ Lint/AmbiguousBlockAssociation:
   Exclude:
     - 'spec/**/*'
 
-Lint/StringConcatenation:
-  Enabled: false
-
 Lint/UselessAccessModifier:
   MethodCreatingMethods:
     - delegate
@@ -133,4 +130,7 @@ Style/FormatString:
   Enabled: false
 
 Style/RegexpLiteral:
+  Enabled: false
+
+Style/StringConcatenation:
   Enabled: false
