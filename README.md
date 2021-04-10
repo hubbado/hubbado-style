@@ -39,6 +39,8 @@ inherit_gem:
     - default.yml
 ```
 
+The inherited rubocop canfiguration can be overridden in the `.rubocop.yml` but this is discouraged.
+
 Now, run:
 
 ```bash
