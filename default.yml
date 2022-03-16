@@ -11,39 +11,22 @@ AllCops:
   TargetRubyVersion: 2.7.3
   NewCops: enable
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/BlockLength:
-  Exclude:
-    - 'Rakefile'
-    - '**/*.rake'
-    - 'spec/factories/**'
-  IgnoredMethods:
-    - ActiveRecord::Base.transaction
-    - attributes_table
-    - attributes_table_for
-    - column
-    - columns
-    - context
-    - controller
-    - define
-    - describe
-    - feature
-    - form
-    - handle
-    - included
-    - inputs
-    - panel
-    - register
-    - scenario
-    - shared_examples
-    - shared_examples_for
-    - show
-    - Struct.new
-    - table_for
+  Enabled: false
 
 Metrics/ClassLength:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
 Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
   Enabled: false
 
 Naming/PredicateName:
