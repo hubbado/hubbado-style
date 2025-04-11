@@ -6,8 +6,8 @@ require "hubbado/style/version"
 Gem::Specification.new do |spec|
   spec.name          = "hubbado-style"
   spec.version       = Hubbado::Style::VERSION
-  spec.authors       = ["Sam Stickland"]
-  spec.email         = ["sam@spacething.org"]
+  spec.authors       = ["Hubbado"]
+  spec.email         = ["devs@hubbado.com"]
 
   spec.summary       = "Hubbado style guides and shared style configs."
   spec.homepage      = "https://github.com/hubbado/hubbado-style"
