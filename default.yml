@@ -8,7 +8,6 @@ AllCops:
     - db/**
     - config/**
     - script/**
-  TargetRubyVersion: 3.4
   NewCops: enable
   SuggestExtensions: false
 
