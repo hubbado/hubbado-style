@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "hubbado-style"
-  s.version = "1.5.2"
+  s.version = "1.6.0"
   s.summary = "Hubbado style guides and shared style configs."
 
   s.authors = ["Hubbado Devs"]
