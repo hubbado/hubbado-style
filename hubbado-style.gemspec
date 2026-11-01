@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.files = Dir.glob(%w[
+    lib/**/*.rb
     default.yml
     *.gemspec
     LICENSE*

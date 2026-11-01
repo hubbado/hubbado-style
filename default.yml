@@ -1,3 +1,6 @@
+require:
+  - hubbado/style
+
 AllCops:
   Include:
     - '**/*.rb'
@@ -159,7 +162,16 @@ Lint/ConstantDefinitionInBlock:
     - 'spec/**/*'
 
 Lint/UnusedMethodArgument:
+  Enabled: false
+
+Hubbado/UnusedMethodArgument:
+  Enabled: true
   AutoCorrect: false
+  AllowUnusedKeywordArguments: false
+  IgnoreEmptyMethods: true
+  IgnoreNotImplementedMethods: true
+  NotImplementedExceptions:
+    - NotImplementedError
 
 Lint/UselessAccessModifier:
   MethodCreatingMethods:

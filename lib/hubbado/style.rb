@@ -1,8 +1,3 @@
-require "hubbado/style/version"
+require "rubocop"
 
-module Hubbado
-  module Style
-    class Error < StandardError; end
-    # Your code goes here...
-  end
-end
+require "rubocop/cop/hubbado/unused_method_argument"
