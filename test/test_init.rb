@@ -1,3 +1,4 @@
+# Lets a test lint a piece of source with default.yml and read the offenses
 require "bundler/setup"
 require "rubocop"
 require "test_bench"
