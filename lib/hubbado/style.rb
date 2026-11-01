@@ -1,8 +1,4 @@
-require "hubbado/style/version"
+# Loads the Hubbado cops that default.yml enables, for a RuboCop run that inherits it
+require "rubocop"
 
-module Hubbado
-  module Style
-    class Error < StandardError; end
-    # Your code goes here...
-  end
-end
+require "hubbado/style/unused_method_argument"

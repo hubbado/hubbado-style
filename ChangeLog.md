@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.6.0 - 2026-11-01]
+## Added
+- Hubbado/UnusedMethodArgument, which replaces Lint/UnusedMethodArgument and
+  ignores the arguments of a `record def`
+- Layout/FirstMethodParameterLineBreak and
+  Layout/MultilineMethodParameterLineBreaks enabled
+- Settings from hubbado_core: SuggestExtensions, Metrics/ModuleLength,
+  Naming/AccessorMethodName, Naming/VariableNumber, Style/Alias,
+  Style/EmptyClassDefinition, Style/FloatDivision, Style/HashAsLastArrayItem
+  and Lint/AmbiguousOperatorPrecedence disabled; Naming/BlockForwarding
+  explicit; Style/ArgumentsForwarding not anonymous;
+  Lint/UnusedMethodArgument not autocorrected; Style/FormatStringToken and
+  Lint/ConstantDefinitionInBlock skip specs
+
+## Changed
+- Layout/ParameterAlignment uses with_fixed_indentation
+- Style/HashSyntax EnforcedShorthandSyntax is either_consistent
+- Target ruby version 4.0
+
+## Migration
+- Rename a `.rubocop.yml` override of Lint/UnusedMethodArgument to
+  Hubbado/UnusedMethodArgument
+- Delete `# rubocop:disable Lint/UnusedMethodArgument` on a `record def`
+  (`rubocop -a` does this), and rename it to Hubbado/UnusedMethodArgument on
+  any other method
+
 # [1.5.2 - 2025-06-16]
 ## Fixed
 - Naming/PredicateName renamed to Naming/PredicatePrefix

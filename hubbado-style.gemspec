@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "hubbado-style"
-  s.version = "1.5.2"
+  s.version = "1.6.0"
   s.summary = "Hubbado style guides and shared style configs."
 
   s.authors = ["Hubbado Devs"]
@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.files = Dir.glob(%w[
+    lib/**/*.rb
     default.yml
     *.gemspec
     LICENSE*
@@ -22,4 +23,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"
+  s.add_development_dependency "test_bench"
 end

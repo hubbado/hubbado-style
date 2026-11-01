@@ -1,3 +1,6 @@
+require:
+  - hubbado/style
+
 AllCops:
   Include:
     - '**/*.rb'
@@ -8,8 +11,9 @@ AllCops:
     - db/**
     - config/**
     - script/**
-  TargetRubyVersion: 3.4
+  TargetRubyVersion: 4.0
   NewCops: enable
+  SuggestExtensions: false
 
 Metrics/AbcSize:
   Enabled: false
@@ -26,18 +30,41 @@ Metrics/CyclomaticComplexity:
 Metrics/MethodLength:
   Enabled: false
 
+# All spec files are basically one giant module
+# Sometimes we include the spec in a module, as RSpec doesn't support include properly
+Metrics/ModuleLength:
+  Enabled: false
+
 Metrics/ParameterLists:
   Enabled: false
 
 Metrics/PerceivedComplexity:
   Enabled: false
 
+# We will use our own judgement here
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/BlockForwarding:
+  EnforcedStyle: explicit
+
 Naming/PredicatePrefix:
   ForbiddenPrefixes:
     - is_
 
+# We will use our own judgement here
+Naming/VariableNumber:
+  Enabled: false
+
 Style/AccessorGrouping:
   Enabled: false
+
+# We will use our own judgement here
+Style/Alias:
+  Enabled: false
+
+Style/ArgumentsForwarding:
+  UseAnonymousForwarding: false
 
 Style/BlockDelimiters:
   EnforcedStyle: line_count_based
@@ -47,11 +74,28 @@ Style/BlockDelimiters:
 Style/Documentation:
   Enabled: false
 
+# One-liner `Foo = Class.new(Bar)` is preferred for empty exception classes
+Style/EmptyClassDefinition:
+  Enabled: false
+
+# This gets it wrong when we want to divide money by money as floats
+Style/FloatDivision:
+  Enabled: false
+
+# Gets confused with %{first} in YAML strings in tests
+Style/FormatStringToken:
+  Exclude:
+    - 'spec/**/*'
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# Unnecessary {} when this is enabled
+Style/HashAsLastArrayItem:
+  Enabled: false
+
 Style/HashSyntax:
-  EnforcedShorthandSyntax: never
+  EnforcedShorthandSyntax: either_consistent
 
 Style/IfUnlessModifier:
   Enabled: false
@@ -84,6 +128,9 @@ Layout/CaseIndentation:
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
 Layout/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
@@ -92,6 +139,12 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
   IndentationWidth: 2
 
+Layout/MultilineMethodParameterLineBreaks:
+  Enabled: true
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
 Layout/LineLength:
   Max: 100
 
@@ -99,6 +152,28 @@ Layout/LineLength:
 Lint/AmbiguousBlockAssociation:
   Exclude:
     - 'spec/**/*'
+
+# We know mathematical precedence so this is unnecessary
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: false
+
+# Constants have to be created and assigned in RSpec blocks
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Hubbado/UnusedMethodArgument:
+  Enabled: true
+  Severity: warning
+  AutoCorrect: false
+  AllowUnusedKeywordArguments: false
+  IgnoreEmptyMethods: true
+  IgnoreNotImplementedMethods: true
+  NotImplementedExceptions:
+    - NotImplementedError
 
 Lint/UselessAccessModifier:
   MethodCreatingMethods:
