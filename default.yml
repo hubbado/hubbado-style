@@ -92,7 +92,7 @@ Style/HashAsLastArrayItem:
   Enabled: false
 
 Style/HashSyntax:
-  EnforcedShorthandSyntax: never
+  EnforcedShorthandSyntax: either_consistent
 
 Style/IfUnlessModifier:
   Enabled: false
