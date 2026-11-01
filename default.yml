@@ -84,6 +84,9 @@ Layout/CaseIndentation:
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
 Layout/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
@@ -91,6 +94,12 @@ Layout/MultilineBlockLayout:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
   IndentationWidth: 2
+
+Layout/MultilineMethodParameterLineBreaks:
+  Enabled: true
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
 
 Layout/LineLength:
   Max: 100
