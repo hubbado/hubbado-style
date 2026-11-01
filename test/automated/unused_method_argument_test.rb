@@ -19,6 +19,14 @@ context "Unused Method Argument" do
     test "Each unused argument is flagged once" do
       assert(cop_names == ["Hubbado/UnusedMethodArgument"] * 2)
     end
+
+    test "Flagged as a warning" do
+      offense = offenses(<<~RUBY).find { |o| o.cop_name == "Hubbado/UnusedMethodArgument" }
+        def call(assignment) = result
+      RUBY
+
+      assert(offense.severity.name == :warning)
+    end
   end
 
   context "Empty Method" do

@@ -166,6 +166,7 @@ Lint/UnusedMethodArgument:
 
 Hubbado/UnusedMethodArgument:
   Enabled: true
+  Severity: warning
   AutoCorrect: false
   AllowUnusedKeywordArguments: false
   IgnoreEmptyMethods: true
