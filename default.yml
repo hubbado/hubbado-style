@@ -125,6 +125,14 @@ Layout/CaseIndentation:
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+  AllowMultilineFinalElement: true
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+  AllowMultilineFinalElement: true
+
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
   AllowMultilineFinalElement: true
@@ -132,9 +140,17 @@ Layout/FirstMethodArgumentLineBreak:
 Layout/FirstMethodParameterLineBreak:
   Enabled: true
 
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
+
 Layout/MultilineBlockLayout:
   Exclude:
     - 'spec/**/*'
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
