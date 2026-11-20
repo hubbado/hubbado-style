@@ -119,9 +119,6 @@ Style/StringLiterals:
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/BlockEndNewline:
-  Enabled: false
-
 Layout/CaseIndentation:
   IndentOneStep: true
 
