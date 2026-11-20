@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.9.0 - 2026-11-20]
+## Changed
+- Layout/FirstArrayElementLineBreak, Layout/MultilineArrayLineBreaks,
+  Layout/FirstHashElementLineBreak and Layout/MultilineHashKeyLineBreaks
+  enabled, with AllowMultilineFinalElement: an array's or a hash's entries go
+  all on one line, or one entry per line. An array or hash laid out one entry
+  per line on purpose is not joined
+
+## Migration
+- Run `rubocop -a --only Layout/FirstArrayElementLineBreak,
+  Layout/MultilineArrayLineBreaks,Layout/FirstHashElementLineBreak,
+  Layout/MultilineHashKeyLineBreaks` (as one argument, without spaces).
+  Every offence of the four cops can be corrected automatically
+
 # [1.8.0 - 2026-11-20]
 ## Changed
 - Layout/FirstMethodArgumentLineBreak and

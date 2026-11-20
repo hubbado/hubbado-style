@@ -122,9 +122,30 @@ instance_double SomeObject,
   property_two: some_other_value
 ```
 
+### Arrays and hashes
+
+The same rule applies to the entries of an array or a hash: all on one line, or one entry per line.
+
+```ruby
+# bad
+["add-to-job-description", "--deal-id", "rec_1",
+ "--by", "Sam Stickland"]
+
+# good
+[
+  "add-to-job-description",
+  "--deal-id",
+  "rec_1",
+  "--by",
+  "Sam Stickland"
+]
+```
+
+`Layout/FirstArrayElementLineBreak`, `Layout/MultilineArrayLineBreaks`, `Layout/FirstHashElementLineBreak` and `Layout/MultilineHashKeyLineBreaks` enforce it.
+
 ### Arguments put on separate lines on purpose
 
-A call whose arguments are one per line stays that way, even if they would fit on one line. So does a list, a hash or a chain of methods laid out over lines to be read more easily. The configuration only reports arguments laid out halfway: some on the first line and the rest below it.
+A call whose arguments are one per line stays that way, even if they would fit on one line. So does an array, a hash or a chain of methods laid out one entry or one step per line to be read more easily. The configuration only reports arguments laid out halfway: some on the first line and the rest below it.
 
 `Layout/FirstMethodArgumentLineBreak` and `Layout/MultilineMethodArgumentLineBreaks` enforce this for calls, and `Layout/FirstMethodParameterLineBreak` and `Layout/MultilineMethodParameterLineBreaks` for definitions. A last argument that runs over several lines is allowed after the opening bracket:
 
