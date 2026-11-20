@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.8.0 - 2026-11-20]
+## Changed
+- Layout/FirstMethodArgumentLineBreak and
+  Layout/MultilineMethodArgumentLineBreaks enabled, with
+  AllowMultilineFinalElement: a call's arguments go on one line, all on one
+  line inside the brackets, or one per line. A call laid out one per line on
+  purpose is not joined
+- README: a call without brackets puts each argument on a line of its own
+  when they do not all fit on one line; the example with the options together
+  on the second line is now the bad one
+
+## Migration
+- Run `rubocop -a --only
+  Layout/FirstMethodArgumentLineBreak,Layout/MultilineMethodArgumentLineBreaks`.
+  Every offence of the two cops can be corrected automatically
+
 # [1.7.0 - 2026-11-20]
 ## Changed
 - Layout/BlockEndNewline enabled, in specs too: a block's `end` or `}` on the
