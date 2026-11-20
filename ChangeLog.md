@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.10.0 - 2026-11-20]
+## Changed
+- Hubbado/MultilineMethodArgumentLineBreaks replaces
+  Layout/MultilineMethodArgumentLineBreaks. It counts each keyword argument as
+  one argument also where a block argument such as `&stream` follows the
+  keywords, which RuboCop's cop does not
+
+## Migration
+- Rename a `.rubocop.yml` override or a disable of
+  Layout/MultilineMethodArgumentLineBreaks to
+  Hubbado/MultilineMethodArgumentLineBreaks
+- Run `rubocop -a --only Hubbado/MultilineMethodArgumentLineBreaks`. Every
+  offence can be corrected automatically
+
 # [1.9.0 - 2026-11-20]
 ## Changed
 - Layout/FirstArrayElementLineBreak, Layout/MultilineArrayLineBreaks,
