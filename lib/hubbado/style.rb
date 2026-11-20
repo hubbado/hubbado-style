@@ -2,3 +2,4 @@
 require "rubocop"
 
 require "hubbado/style/unused_method_argument"
+require "hubbado/style/multiline_method_argument_line_breaks"
