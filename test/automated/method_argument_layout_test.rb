@@ -3,7 +3,11 @@ require_relative "../test_init"
 # A call's arguments go on one line, or all on one line inside the brackets, or one per line.
 context "Method Argument Layout" do
   def self.layout_cop_names(source)
-    offenses(source).map(&:cop_name).grep(%r{\ALayout/(First|Multiline)MethodArgument}).uniq.sort
+    offenses(source)
+      .map(&:cop_name)
+      .grep(%r{\A(Layout|Hubbado)/(First|Multiline)MethodArgument})
+      .uniq
+      .sort
   end
 
   context "Arguments on the first line, and the rest on lines below" do
@@ -15,9 +19,49 @@ context "Method Argument Layout" do
 
     test "Flagged" do
       assert(cop_names == %w[
+        Hubbado/MultilineMethodArgumentLineBreaks
         Layout/FirstMethodArgumentLineBreak
-        Layout/MultilineMethodArgumentLineBreaks
       ])
+    end
+  end
+
+  context "Keyword arguments several to a line, with a block argument last" do
+    cop_names = layout_cop_names(<<~RUBY)
+      search.(
+        query_spec: query_spec, place: Place.of(query_spec), limit: limit,
+        project: project, skip: skip,
+        &stream
+      )
+    RUBY
+
+    test "Flagged" do
+      assert(cop_names == ["Hubbado/MultilineMethodArgumentLineBreaks"])
+    end
+  end
+
+  context "Keyword arguments several to a line, with a block argument last, corrected" do
+    source = corrected(<<~RUBY)
+      search.(
+        query_spec: query_spec, place: Place.of(query_spec), limit: limit, reference: reference,
+        project: project, name: clock.now.strftime(SEARCH_NAME), skip: skip, saved: saved,
+        &stream
+      )
+    RUBY
+
+    test "One argument per line" do
+      assert(source == <<~RUBY)
+        search.(
+          query_spec: query_spec,
+          place: Place.of(query_spec),
+          limit: limit,
+          reference: reference,
+          project: project,
+          name: clock.now.strftime(SEARCH_NAME),
+          skip: skip,
+          saved: saved,
+          &stream
+        )
+      RUBY
     end
   end
 
@@ -28,7 +72,7 @@ context "Method Argument Layout" do
     RUBY
 
     test "Flagged" do
-      assert(cop_names == ["Layout/MultilineMethodArgumentLineBreaks"])
+      assert(cop_names == ["Hubbado/MultilineMethodArgumentLineBreaks"])
     end
   end
 

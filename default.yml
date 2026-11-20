@@ -157,8 +157,7 @@ Layout/MultilineMethodCallIndentation:
   IndentationWidth: 2
 
 Layout/MultilineMethodArgumentLineBreaks:
-  Enabled: true
-  AllowMultilineFinalElement: true
+  Enabled: false
 
 Layout/MultilineMethodParameterLineBreaks:
   Enabled: true
@@ -185,6 +184,10 @@ Lint/ConstantDefinitionInBlock:
 
 Lint/UnusedMethodArgument:
   Enabled: false
+
+Hubbado/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
 
 Hubbado/UnusedMethodArgument:
   Enabled: true
