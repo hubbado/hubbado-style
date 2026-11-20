@@ -125,6 +125,10 @@ Layout/CaseIndentation:
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+  AllowMultilineFinalElement: true
+
 Layout/FirstMethodParameterLineBreak:
   Enabled: true
 
@@ -135,6 +139,10 @@ Layout/MultilineBlockLayout:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
   IndentationWidth: 2
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
 
 Layout/MultilineMethodParameterLineBreaks:
   Enabled: true

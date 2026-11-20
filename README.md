@@ -98,17 +98,39 @@ some_method(
 
 ### Methods calls without brackets
 
-If the method call does not use brackets, different types of arguments can be placed one different lines. If the full set of related arguments does not fit on one line they should be placed one per line.
+The same rule applies to a method call without brackets: if the arguments do not all fit on one line, each argument goes on a line of its own. The first argument stays on the line of the method name.
 
-For example, in the following method calls the first method argument is the principle, and most important argument.
+Rationale: A mixture of related horizontal and vertical information is harder to scan.
 
 ```ruby
+# bad
 cell Somecell, model,
-  option_one: value_one, option_two: value_two, ...
+  option_one: value_one, option_two: value_two
+
+# good
+cell Somecell,
+  model,
+  option_one: value_one,
+  option_two: value_two
 ```
+
+Options are arguments too, so each goes on a line of its own:
 
 ```ruby
 instance_double SomeObject,
   property_one: some_value,
   property_two: some_other_value
+```
+
+### Arguments put on separate lines on purpose
+
+A call whose arguments are one per line stays that way, even if they would fit on one line. So does a list, a hash or a chain of methods laid out over lines to be read more easily. The configuration only reports arguments laid out halfway: some on the first line and the rest below it.
+
+`Layout/FirstMethodArgumentLineBreak` and `Layout/MultilineMethodArgumentLineBreaks` enforce this for calls, and `Layout/FirstMethodParameterLineBreak` and `Layout/MultilineMethodParameterLineBreaks` for definitions. A last argument that runs over several lines is allowed after the opening bracket:
+
+```ruby
+expect(result).to eq({
+  id: id,
+  name: name
+})
 ```
