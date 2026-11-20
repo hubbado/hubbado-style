@@ -20,3 +20,28 @@ end
 def unused_argument_cop_names(source)
   offenses(source).map(&:cop_name).grep(/UnusedMethodArgument/)
 end
+
+# The source as `rubocop -a` leaves it, with default.yml
+def corrected(source)
+  require "tmpdir"
+
+  Dir.mktmpdir do |directory|
+    path = File.join(directory, "example.rb")
+    File.write(path, source)
+    config = File.expand_path("../default.yml", __dir__)
+    system(
+      "bundle",
+      "exec",
+      "rubocop",
+      "--config",
+      config,
+      "-a",
+      "--format",
+      "quiet",
+      path,
+      out: File::NULL,
+      err: File::NULL
+    )
+    File.read(path)
+  end
+end
