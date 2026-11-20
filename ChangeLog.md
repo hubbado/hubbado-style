@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.7.0 - 2026-11-20]
+## Changed
+- Layout/BlockEndNewline enabled, in specs too: a block's `end` or `}` on the
+  line of its body is an offence, so `rubocop -a` can no longer leave
+  `do |x|` followed by a body and `end` on one line
+
+## Migration
+- Run `rubocop -a --only Layout/BlockEndNewline`. The spec style
+  `let(:x) { Foo.call(` ... `) }` is an offence now; the correction puts the
+  `}` on its own line
+
 # [1.6.0 - 2026-11-01]
 ## Added
 - Hubbado/UnusedMethodArgument, which replaces Lint/UnusedMethodArgument and
