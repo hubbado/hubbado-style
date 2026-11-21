@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.11.0 - 2026-11-21]
+## Added
+- Hubbado/MultilineInterpolation, which reports a string interpolation that
+  runs over more than one line. It corrects nothing: name the value before the
+  string
+
+## Changed
+- Style/MixinUsage skips `test/**/*_init.rb`, where a test's init file
+  includes the namespace under test at the top level
+
+## Migration
+- Run `rubocop --only Hubbado/MultilineInterpolation`, and name each value it
+  reports before its string by hand
+
 # [1.10.0 - 2026-11-20]
 ## Changed
 - Hubbado/MultilineMethodArgumentLineBreaks replaces

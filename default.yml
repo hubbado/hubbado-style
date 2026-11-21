@@ -106,6 +106,12 @@ Style/Lambda:
 Style/LambdaCall:
   Enabled: false
 
+# A test's init file includes the namespace under test at the top level, so its tests can name
+# the classes without it.
+Style/MixinUsage:
+  Exclude:
+    - 'test/**/*_init.rb'
+
 Style/NestedParenthesizedCalls:
   Enabled: false
 
@@ -188,6 +194,9 @@ Lint/UnusedMethodArgument:
 Hubbado/MultilineMethodArgumentLineBreaks:
   Enabled: true
   AllowMultilineFinalElement: true
+
+Hubbado/MultilineInterpolation:
+  Enabled: true
 
 Hubbado/UnusedMethodArgument:
   Enabled: true
