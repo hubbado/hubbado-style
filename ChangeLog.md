@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.12.0 - 2026-11-24]
+## Changed
+- Layout/LineLength allows a line that holds only a test or context name and
+  `do`, so the name TestBench prints on a failure can be found in the source
+- Naming/FileName skips `libexec/**/*`, where a launcher is named after the
+  command in `bin/` that runs it
+  (RuboCop's own `Rakefile.rb` exclusion is kept)
+- Style/FormatStringToken is enabled explicitly, so a RuboCop release that
+  disables it by default leaves it on
+
+## Migration
+- Join test and context names that were split over lines back onto one line
+- A `libexec/` launcher needs no shebang to satisfy Naming/FileName
+
 # [1.11.0 - 2026-11-21]
 ## Added
 - Hubbado/MultilineInterpolation, which reports a string interpolation that

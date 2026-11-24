@@ -48,6 +48,13 @@ Naming/AccessorMethodName:
 Naming/BlockForwarding:
   EnforcedStyle: explicit
 
+# A launcher in libexec is named after the command in bin that runs it, and a command's name
+# has dashes.
+Naming/FileName:
+  Exclude:
+    - Rakefile.rb
+    - 'libexec/**/*'
+
 Naming/PredicatePrefix:
   ForbiddenPrefixes:
     - is_
@@ -83,7 +90,10 @@ Style/FloatDivision:
   Enabled: false
 
 # Gets confused with %{first} in YAML strings in tests
+# Named tokens say which value goes where. Enabled here on purpose: RuboCop expects to disable the
+# cop by default in its next major release.
 Style/FormatStringToken:
+  Enabled: true
   Exclude:
     - 'spec/**/*'
 
@@ -171,8 +181,12 @@ Layout/MultilineMethodParameterLineBreaks:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
+# A test's or context's name stays on one line, so the name TestBench prints on a failure can be
+# found in the source. Only a line that holds nothing but the name, and `do`, is allowed.
 Layout/LineLength:
   Max: 100
+  AllowedPatterns:
+    - '\A\s*(test|context) "[^"]*"( do)?\z'
 
 # Disabled so that we can write .to_not change { } in Rspec
 Lint/AmbiguousBlockAssociation:
