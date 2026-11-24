@@ -52,6 +52,7 @@ Naming/BlockForwarding:
 # has dashes.
 Naming/FileName:
   Exclude:
+    - Rakefile.rb
     - 'libexec/**/*'
 
 Naming/PredicatePrefix:
