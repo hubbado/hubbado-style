@@ -24,4 +24,13 @@ context "File Name" do
       assert(cop_names == ["Naming/FileName"])
     end
   end
+
+  # RuboCop's own default; setting an Exclude replaces the default list rather than adding to it.
+  context "Rakefile.rb" do
+    cop_names = file_name_cop_names("Rakefile.rb")
+
+    test "Not flagged" do
+      assert(cop_names.empty?)
+    end
+  end
 end
