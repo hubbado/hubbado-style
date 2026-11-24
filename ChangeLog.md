@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   `do`, so the name TestBench prints on a failure can be found in the source
 - Naming/FileName skips `libexec/**/*`, where a launcher is named after the
   command in `bin/` that runs it
+  (RuboCop's own `Rakefile.rb` exclusion is kept)
 - Style/FormatStringToken is enabled explicitly, so a RuboCop release that
   disables it by default leaves it on
 
