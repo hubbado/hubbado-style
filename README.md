@@ -122,6 +122,10 @@ instance_double SomeObject,
   property_two: some_other_value
 ```
 
+### Test and context names
+
+A test's or context's name stays on one line, however long, so the name TestBench prints when the test fails can be found in the source. `Layout/LineLength` allows a line that holds only `test "…"` or `context "…"` and `do`.
+
 ### Arrays and hashes
 
 The same rule applies to the entries of an array or a hash: all on one line, or one entry per line.
