@@ -202,6 +202,12 @@ Lint/ConstantDefinitionInBlock:
   Exclude:
     - 'spec/**/*'
 
+# A test compares a value with the literal it expects, so exact equality is the check it means,
+# and a float that differs shows as a failing test. In library code a wrong comparison is silent.
+Lint/FloatComparison:
+  Exclude:
+    - 'test/**/*'
+
 Lint/UnusedMethodArgument:
   Enabled: false
 
