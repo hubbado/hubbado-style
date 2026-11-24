@@ -188,6 +188,9 @@ Lint/ConstantDefinitionInBlock:
   Exclude:
     - 'spec/**/*'
 
+Lint/UnusedBlockArgument:
+  Enabled: false
+
 Lint/UnusedMethodArgument:
   Enabled: false
 
@@ -197,6 +200,12 @@ Hubbado/MultilineMethodArgumentLineBreaks:
 
 Hubbado/MultilineInterpolation:
   Enabled: true
+
+Hubbado/UnusedBlockArgument:
+  Enabled: true
+  Severity: warning
+  IgnoreEmptyBlocks: true
+  AllowUnusedKeywordArguments: false
 
 Hubbado/UnusedMethodArgument:
   Enabled: true
