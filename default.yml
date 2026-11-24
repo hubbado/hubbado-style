@@ -89,7 +89,10 @@ Style/FloatDivision:
   Enabled: false
 
 # Gets confused with %{first} in YAML strings in tests
+# Named tokens say which value goes where. Enabled here on purpose: RuboCop expects to disable the
+# cop by default in its next major release.
 Style/FormatStringToken:
+  Enabled: true
   Exclude:
     - 'spec/**/*'
 
