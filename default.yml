@@ -48,6 +48,12 @@ Naming/AccessorMethodName:
 Naming/BlockForwarding:
   EnforcedStyle: explicit
 
+# A launcher in libexec is named after the command in bin that runs it, and a command's name
+# has dashes.
+Naming/FileName:
+  Exclude:
+    - 'libexec/**/*'
+
 Naming/PredicatePrefix:
   ForbiddenPrefixes:
     - is_
